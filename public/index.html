@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Купить билеты онлайн</title>
+  </head>
+  <body>
+  <header>
+    <div class="logo">
+      <a href="/">
+        <picture>
+          <source media="(min-width: 320px)" srcset="./logo_mini.png">
+          <img src="./logo_mini.png" alt="logo">
+        </picture>
+      </a>
+    </div>
+    <nav>
+      <div class="burger"></div>
+      <ul class="menu">
+        <li>
+          <a href="#avia">Самолёт</a>
+        </li>
+        <li>
+          <a href="#rail">Поезд</a>
+        </li>
+        <li>
+          <a href="#auto">Автобус</a>
+        </li>
+        <li>
+          <a href="#about">О нас</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Купить билеты онлайн</h1>
+    <div>
+      <p>На нашем сайте Вы можете заказать билеты в любую точку мира.
+        Самолёты, поезда, автобусы - доставят Вас с максимальным комфортом быстро и не дорого!</p>
+      <p>Вниманию пассажиров Бизнес-класса: Если Ваш маршрут объединяет зоны 1-2 и зоны 3-4,
+        Вы можете перевезти в салоне 2 места ручной клади весом до 15 кг.
+        Исключение: на рейсе, который выполняется в зонах 1-2, в связи с ограниченной емкостью пассажирского салона,
+        Вам могут предложить сдать Вашу ручную кладь в багаж, а после прибытия она будет выдана Вам возле выхода из самолета.</p>
+    </div>
+    <h2 id="avia">Купить авиабилеты онлайн</h2>
+    <div id="app"></div>
+    <h2 id="rail">Купить онлайн билеты на поезд</h2>
+    <div id="app1"></div>
+    <h2 id="auto">Купить онлайн билеты на автобус</h2>
+    <div id="app2"></div>
+    <h2 id="about">О нас</h2>
+  </main>
+  <footer>
+    &copy;2018 Покупайте билеты онлайн в любую точку мира не выходя из дома!
+  </footer>
+  </body>
+</html>

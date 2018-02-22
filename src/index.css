@@ -1,0 +1,130 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  min-height: 100vh;
+  position: relative;
+}
+h1,h2{
+  text-align: center;
+}
+.burger {
+  display: none;
+}
+header .logo, header nav {
+  display: inline-block;
+  float: left;
+}
+header nav {
+  float: right;
+}
+header {
+  padding: 10px 5%;
+  overflow: auto;
+  background: #63ADD0;
+}
+header .logo {
+  width: 75px;
+}
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 84px;
+}
+.menu a {
+  text-decoration: none;
+  padding: 0 25px;
+  color: white;
+  display: block;
+}
+.menu li:hover {
+  background: #3CA0D0;
+  box-shadow: 0 0 2px 10px #3CA0D0;
+}
+main {
+  padding: 0 5%;
+  min-height: calc(100% - 105px);
+  padding-bottom: 100px;
+}
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #e59422;
+}
+table {
+  width: 100%;
+  border: 2px solid #8dcbe9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+td, th {
+  padding: 5px 10px;
+  text-align: center;
+}
+th {
+  color: #e59422;
+}
+.controlPanel {
+  margin-bottom: 10px;
+}
+.controlPanel select:focus {
+  outline: none !important;
+}
+.controlPanel select {
+  width: 250px;
+  margin: 0 calc(33.333333% - 320px) 0 20px;
+  border: 2px solid #63ADD0;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: #8DCAE8;
+  font-size: 16px;
+}
+.controlPanel select+select{
+  margin: 0 calc((33.333333% - 300px) / 2);
+}
+.controlPanel select+select+select{
+  margin: 0 0 0 calc(33.333333% - 300px);
+}
+tr:nth-child(even) {
+  background: #8DCAE8AA;
+}
+tr:nth-child(odd) {
+  background: #8DCAE855;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  height: 85px;
+  line-height: 85px;
+  background: #63ADD0;
+  padding: 10px 5%;
+  color: white;
+  bottom: 0;
+}
+table{
+  background-size: auto 80%!important;
+  background-position: 50% 50%!important;
+}
+#app table {
+  background: url(./images/avia.png) no-repeat;
+}
+#app1 table {
+  background: url(./images/train.png) no-repeat;
+  background-position: 100% 50%!important;
+}
+#app2 table {
+  background: url(./images/bus.png) no-repeat;
+}
+@media screen and (max-width: 599px) {
+
+}

@@ -1,3 +1,12 @@
+:root {
+  --accent-color: #e5828d; /* #e5828d, #e59422 */
+  --main-color: #8e70d0; /* #8e70d0, #63ADD0 */
+  --darken-color: #b346d0; /* #b346d0, #3CA0D0 */
+  --lighten-color: #e49ee8; /* #e49ee8, #8DCAE8 */
+  --lighten-color-1: rgba(220, 164, 232, 0.67); /* rgba(220, 164, 232, 0.67), #8DCAE8AA */
+  --lighten-color-2: rgba(223, 161, 232, 0.33); /* rgba(223, 161, 232, 0.33), #8DCAE855 */
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -21,10 +30,13 @@ header nav {
 header {
   padding: 10px 5%;
   overflow: auto;
-  background: #63ADD0;
+  background: var(--main-color);
 }
 header .logo {
   width: 75px;
+}
+header .logo a {
+  display: block;
 }
 header nav ul {
   list-style-type: none;
@@ -36,6 +48,47 @@ header nav ul li {
   font-size: 24px;
   line-height: 84px;
 }
+.burger {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+.burger .burger-line {
+  display: block;
+  position: absolute;
+  left: 50%;
+  height: 6px;
+  border-radius: 10rem;
+  width: 90%;
+  background: #fff;
+  transition: transform .5s, top .2s, opacity .21s;
+  will-change: transform;
+}
+.burger .burger-line:first-child {
+  top: 15%;
+  transform: translateX(-50%) rotate(0deg);
+}
+.burger .burger-line:nth-child(2) {
+  top: 50%;
+  transform: translateX(-50%);
+}
+.burger .burger-line:last-child {
+  top: 85%;
+  transform: translateX(-50%) rotate(0deg);
+}
+.burger.burger__active .burger-line:first-child {
+  top: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.burger.burger__active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+.burger.burger__active .burger-line:last-child {
+  top: 50%;
+  transform: translateX(-50%) rotate(135deg);
+}
 .menu a {
   text-decoration: none;
   padding: 0 25px;
@@ -43,8 +96,8 @@ header nav ul li {
   display: block;
 }
 .menu li:hover {
-  background: #3CA0D0;
-  box-shadow: 0 0 2px 10px #3CA0D0;
+  background: var(--darken-color);
+  box-shadow: 0 0 2px 10px var(--darken-color);
 }
 main {
   padding: 0 5%;
@@ -54,11 +107,11 @@ main {
 h1 {
   text-align: center;
   font-size: 32px;
-  color: #e59422;
+  color: var(--accent-color);
 }
 table {
   width: 100%;
-  border: 2px solid #8dcbe9;
+  border: 2px solid var(--darken-color);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -67,7 +120,7 @@ td, th {
   text-align: center;
 }
 th {
-  color: #e59421;
+  color: var(--accent-color);
 }
 .controlPanel {
   margin-bottom: 10px;
@@ -78,12 +131,12 @@ th {
 .controlPanel select {
   width: 250px;
   margin: 0 calc(33.333333% - 320px) 0 20px;
-  border: 2px solid #63ADD0;
+  border: 2px solid var(--main-color);
   color: #fff;
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 10px;
-  background: #8DCAE8;
+  background: var(--lighten-color);
   font-size: 16px;
 }
 .controlPanel select+select{
@@ -93,10 +146,10 @@ th {
   margin: 0 0 0 calc(33.333333% - 300px);
 }
 tr:nth-child(even) {
-  background: #8DCAE8AA;
+  background: var(--lighten-color-1);
 }
 tr:nth-child(odd) {
-  background: #8DCAE855;
+  background: var(--lighten-color-2);
 }
 footer {
   position: absolute;
@@ -106,7 +159,7 @@ footer {
   box-sizing: border-box;
   height: 85px;
   line-height: 85px;
-  background: #b27cd0;
+  background: var(--main-color);
   padding: 10px 5%;
   color: white;
   bottom: 0;
@@ -125,6 +178,45 @@ table{
 #app2 table {
   background: url(./images/bus.png) no-repeat;
 }
-@media screen and (max-width: 599px) {
 
+/* Media */
+@media screen and (max-width: 991px) {
+  header {
+    padding: 0 .5rem;
+  }
+  .menu a {
+    line-height: 80px;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .burger {
+    display: block;
+  }
+  .menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow-y: auto;
+    background: var(--main-color);
+    transition: max-height .2s, opacity .2s;
+  }
+  .menu li {
+    display: block;
+    line-height: 40px;
+  }
+  .menu li:hover {
+    box-shadow: none;
+  }
+  .menu a {
+    line-height: 40px;
+  }
+  .menu.menu__active {
+    max-height: 100vh;
+    opacity: 1;
+  }
 }

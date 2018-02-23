@@ -239,4 +239,13 @@ ReactDOM.render(
     behavior: 'smooth',block:'start'
 })})});
 
+// Mobile menu
+const burger = document.getElementById('burger');
+const mainMenu = document.getElementById('menu');
+
+burger.addEventListener('click', function () {
+    this.classList.toggle('burger__active');
+    mainMenu.classList.toggle('menu__active');
+});
+
 registerServiceWorker();
